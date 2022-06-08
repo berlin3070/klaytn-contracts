@@ -6,7 +6,7 @@ pragma solidity ^0.8.0;
 import "./IAccessControl.sol";
 import "../utils/Context.sol";
 import "../utils/Strings.sol";
-import "../utils/introspection/ERC165.sol";
+import "../KIP/utils/introspection/KIP13.sol";
 
 /**
  * @dev Contract module that allows children to implement role-based access
@@ -46,7 +46,7 @@ import "../utils/introspection/ERC165.sol";
  * grant and revoke this role. Extra precautions should be taken to secure
  * accounts that have been granted it.
  */
-abstract contract AccessControl is Context, IAccessControl, ERC165 {
+abstract contract AccessControl is Context, IAccessControl, KIP13 {
     struct RoleData {
         mapping(address => bool) members;
         bytes32 adminRole;
